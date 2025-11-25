@@ -1,9 +1,14 @@
 import React from 'react'
-
+import "./App.css"
+import Card from "./components/Card";
+import NavBar from './components/NavBar';
 const App = () => {
   return (
-    <div>App</div>
-  )
+    <>
+      <NavBar/>
+      <Card/>
+    </>
+    )
 }
 
 export default App
