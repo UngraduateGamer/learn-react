@@ -16,6 +16,7 @@ localStorage.removeItem("name");
         id:"2226200",
         role:"Graphics Designer"
     }
+
     //convert the object to string and then send data to local Storage
     const stringObj = JSON.stringify(obj);
     localStorage.setItem('users',stringObj);
