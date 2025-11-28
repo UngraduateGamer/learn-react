@@ -35,6 +35,8 @@ const App = () => {
   function changeA(){
     setA(a+1)
   }
+
+
   return (
     <>
     <div>Use Effect</div>
