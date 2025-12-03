@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.scroll-hidden::-webkit-scrollbar{
+    display: none;
+}
+#tasklist::-webkit-scrollbar{
+    display: none;
+}
+
+/*
+Source - https://stackoverflow.com/a
+Posted by Oscar Fuquen
+Retrieved 2025-12-02, License - CC BY-SA 3.0
+*/
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    /* opacity: 1; */
+    /* display: block; */
+    /* width: 20px; */
+    /* height: 20px; */
+    /* background: white; */
+    filter: invert(1);
+    /* border-width: thin; */
+}
+
