@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scale(0);
+  height: 1.3px;
+  background: #00000059;
+  left: 0;
+  bottom: -5px;
+  transform-origin: left;
+  transition: all 0.2s;
+}
+
+.a:hover::after {
+  transform: scale(1);
+  width: 100%;
+}
+
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.active {
+  color: #db4444;
+}
+
+.manage-profile {
+  background: #00000004;
+  backdrop-filter: blur(75px);
+
+}
+
+
+.img404{
+  background-image: url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif');
+  width: 80%;
+  margin: 0 auto;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
