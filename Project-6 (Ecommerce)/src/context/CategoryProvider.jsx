@@ -7,7 +7,6 @@ const CategoryProvider = (props) => {
     async function getCategory(){
         const data = await axios.get("https://dummyjson.com/products/categories");
         setCategories(data);
-        console.log(categories)
     }
     getCategory()
     },[])

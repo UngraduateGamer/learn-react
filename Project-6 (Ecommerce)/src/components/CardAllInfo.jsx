@@ -14,7 +14,7 @@ const CardAllInfo = (props) => {
   return (
     <NavLink to={`/product/${props.data.id}`}>
    <div className="card w-[250px]  bg-white rounded p-2 pb-0 border border-gray-200">
-                <div className="image  relative rounded overflow-hidden group " onMouseEnter={()=>{setBtn(!btn)}} onMouseLeave={()=>{setBtn(!btn)}}>
+                <div className="image  relative rounded overflow-hidden group bg-gray-100 " onMouseEnter={()=>{setBtn(!btn)}} onMouseLeave={()=>{setBtn(!btn)}}>
                     <img src={props.data && props.data.thumbnail} alt="" className='w-full h-full object-cover object-center'/>
                 {/* <div className={`absolute bg-black text-white w-full p-2 ${btn?"bottom-0":"-bottom-10"} text-center left-0 transition-all  text-xs `}>
                     Add to Cart

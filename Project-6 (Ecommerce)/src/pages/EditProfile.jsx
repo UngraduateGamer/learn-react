@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const EditProfile = () => {
+  const [userData,setUserData] = useState();
+  const [firstName,setFirstName] = useState('');
+  const [email,setEmail] = useState('');
+  const [address,setAddress ] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [lastName,setLastName] = useState('');
+  const [last,setLast] = useState('');
+  const [first,setFirst] = useState('');
+  function submitHandler(event){
+    event.preventDefault();
+    setLast(lastName)
+    setFirst(firstName)
+    setAddress('')
+    setFirstName('')
+    setLastName('')
+    setAddress('')
+    setEmail('')
+    setNewPassword('')
+    setConfirmPassword('')
+    setCurrentPassword('')
+  }
+    useEffect(()=>{
+      setUserData(JSON.parse(localStorage.getItem("registeredUser")))
+    },[])
   return (
     <>
     <Header/>
     <Navbar/>
-    <h2 className="w-[90%]  text-xl font-semibold mx-auto mt-5">Welcome! <span className="text-[#db4444]"> Md Rimel</span></h2>
+    {
+      localStorage.getItem("loggedInUser") || localStorage.getItem("RegisteredUser") ? <div>
+      <h2 className="w-[90%]  text-xl font-semibold mx-auto mt-5 capitalize">Welcome! <span className="text-[#db4444] capitalize"> {userData?.name || first} {last}</span></h2>
     <div className="w-[90%]   mx-auto py-5">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
@@ -48,7 +76,7 @@ const EditProfile = () => {
             Edit Your Profile
           </h2>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={submitHandler}>
             {/* Name */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -57,6 +85,8 @@ const EditProfile = () => {
                   type="text"
                   placeholder="Md"
                   className="w-full bg-gray-100 px-4 py-3 rounded outline-none"
+                  onChange={(event)=>setFirstName(event.target.value)}
+                  value={firstName}
                 />
               </div>
 
@@ -66,6 +96,8 @@ const EditProfile = () => {
                   type="text"
                   placeholder="Rimel"
                   className="w-full bg-gray-100 px-4 py-3 rounded outline-none"
+                  onChange={(event)=>setLastName(event.target.value)}
+                  value={lastName}
                 />
               </div>
             </div>
@@ -78,6 +110,8 @@ const EditProfile = () => {
                   type="email"
                   placeholder="rimel111@gmail.com"
                   className="w-full bg-gray-100 px-4 py-3 rounded outline-none"
+                  onChange={(event)=>setEmail(event.target.value)}
+                  value={email}
                 />
               </div>
 
@@ -87,6 +121,8 @@ const EditProfile = () => {
                   type="text"
                   placeholder="Kingston, 5236, United State"
                   className="w-full bg-gray-100 px-4 py-3 rounded outline-none"
+                  onChange={(event)=>setAddress(event.target.value)}
+                  value={address}
                 />
               </div>
             </div>
@@ -99,16 +135,22 @@ const EditProfile = () => {
                 type="password"
                 placeholder="Current Password"
                 className="w-full bg-gray-100 px-4 py-3 rounded outline-none"
+                onChange={(event)=>setCurrentPassword(event.target.value)}
+                value={currentPassword}
               />
               <input
                 type="password"
                 placeholder="New Password"
                 className="w-full bg-gray-100 px-4 py-3 rounded outline-none"
+                onChange={(event)=>setNewPassword(event.target.value)}
+                value={newPassword}
               />
               <input
                 type="password"
                 placeholder="Confirm New Password"
                 className="w-full bg-gray-100 px-4 py-3 rounded outline-none"
+                onChange={(event)=>setConfirmPassword(event.target.value)}
+                value={confirmPassword}
               />
             </div>
 
@@ -132,6 +174,12 @@ const EditProfile = () => {
 
       </div>
     </div>
+    </div> : <div className="h-150 w-full flex items-center justify-center">
+      <h2 className="text-4xl uppercase text-red-500 font-bold">Please Login First to edit your Profile</h2>
+    </div>
+    }
+
+    
     <Footer/>
     </>
   );

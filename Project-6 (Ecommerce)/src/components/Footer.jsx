@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -34,11 +35,11 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-4">Account</h3>
           <ul className="space-y-2 text-sm">
-            <li>My Account</li>
-            <li>Login / Register</li>
-            <li>Cart</li>
-            <li>Wishlist</li>
-            <li>Shop</li>
+            <li> <NavLink  to="/account">My Account</NavLink> </li> 
+            <li> <NavLink to="/898">  Login / Register </NavLink></li>
+            <li> <NavLink to="/cart" >Cart</NavLink> </li>
+            <li><NavLink to="/wish" >Wishlist</NavLink></li>
+            <li><NavLink to="/shop" >Shop</NavLink></li>
           </ul>
         </div>
 
@@ -46,10 +47,10 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-4">Quick Link</h3>
           <ul className="space-y-2 text-sm">
-            <li>Privacy Policy</li>
-            <li>Terms Of Use</li>
-            <li>FAQ</li>
-            <li>Contact</li>
+            <li><NavLink to="/nothing">Privacy Policy</NavLink></li>
+            <li><NavLink to="/nothing2">Terms Of Use</NavLink></li>
+            <li><NavLink to="/nothing23">FAQ</NavLink></li>
+            <li><NavLink to="/nothing4">Contact</NavLink></li>
           </ul>
         </div>
 

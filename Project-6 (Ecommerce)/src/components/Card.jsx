@@ -17,12 +17,12 @@ const Card = (props) => {
     }
   return (
     
-   <div className="card w-[250px] bg-white rounded cursor-pointer" onClick={() => navigate(`/product/${props.data.id}`)}>
+   <div className="  card w-[250px] bg-white rounded cursor-pointer" onClick={() => navigate(`/product/${props.data.id}`)}>
                 <div className="image cursor-pointer w-[250px] h-[250px] bg-[#f5f5f5] p-10 relative rounded overflow-hidden group " onMouseEnter={()=>{setBtn(!btn)}} onMouseLeave={()=>{setBtn(!btn)}}>
                     <img src={props.data && props.data.thumbnail} alt="" className='w-full h-full object-cover object-center'/>
-                <div className={`absolute bg-black text-white w-full p-2 ${btn?"bottom-0":"-bottom-10"} text-center left-0 transition-all    `} onClick={AddtoCart}>
+                {/* <div className={`absolute bg-black text-white w-full p-2 ${btn?"bottom-0":"-bottom-10"} text-center left-0 transition-all    `} onClick={AddtoCart}>
                     Add to Cart
-                </div>
+                </div> */}
 
                 <div className={` ${ props.hidden ?  "hidden" : "absolute" } discount absolute bg-[#db4444] text-white rounded-md px-3 py-1 top-3 left-3 text-sm`}>
                     -{`${ Math.floor(props.data?.discountPercentage)}`}%

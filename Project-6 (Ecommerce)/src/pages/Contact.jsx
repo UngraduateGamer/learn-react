@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiPhoneCall, FiMail } from "react-icons/fi";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const Contact = () => {
+  const [name,setName] = useState('');
+  const [email,setEmail] = useState('');
+  const [phone,setPhone] = useState('');
+  const [message,setMessage] = useState('');
+
+  function SubmitHandler(event){
+    event.preventDefault();
+    setEmail('');
+    setName('');
+    setPhone('');
+    setMessage('');
+  }
   return (
     <>
     <Header/>
@@ -49,21 +61,27 @@ const Contact = () => {
 
         {/* Right Form */}
         <div className="lg:col-span-2 shadow-md rounded-md p-6">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={SubmitHandler}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <input
                 type="text"
                 placeholder="Your Name *"
+                value={name}
+                onChange={(event)=>{setName(event.target.value)}}
                 className="w-full bg-gray-100 px-4 py-3 rounded outline-none focus:ring-1 focus:ring-[#df4444]"
               />
               <input
                 type="email"
                 placeholder="Your Email *"
+                onChange={(event)=>{setEmail(event.target.value)}}
+                value={email}
                 className="w-full bg-gray-100   px-4 py-3 rounded outline-none focus:ring-1 focus:ring-[#df4444]"
               />
               <input
-                type="text"
+                type="number"
                 placeholder="Your Phone *"
+                value={phone}
+                onChange={(event)=>{setPhone(event.target.value)}}
                 className="w-full bg-gray-100 px-4 py-3 rounded outline-none focus:ring-1 focus:ring-[#df4444]"
               />
             </div>
@@ -71,6 +89,8 @@ const Contact = () => {
             <textarea
               rows="8"
               placeholder="Your Message"
+              value={message}
+              onChange={(event)=>{setMessage(event.target.value)}}
               className="w-full bg-gray-100 px-4 py-3 rounded outline-none focus:ring-1 focus:ring-[#df4444] resize-none"
             ></textarea>
 

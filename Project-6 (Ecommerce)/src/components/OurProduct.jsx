@@ -52,7 +52,6 @@ useEffect(()=>{
             }
         </div>
             
-        <button className='btn capitalize text-black bg-[#db4444] text-white px-7 py-4 rounded mx-auto flex items-center text-xs active:scale-95 cursor-pointer mt-10'>view all products</button>
     </div>
   )
 }

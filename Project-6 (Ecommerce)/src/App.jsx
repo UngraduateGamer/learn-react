@@ -13,6 +13,9 @@ import Checkout from './pages/Checkout';
 import ProductDetails from './pages/ProductDetails';
 import CartPage from './pages/CartPage';
 import ShowCategory from './pages/ShowCategory';
+import SearchQuery from './pages/SearchQuery';
+import AddProduct from './pages/AddProduct';
+import MyOrders from './pages/MyOrders';
 const App = () => {
   return (
     <Routes>
@@ -23,9 +26,12 @@ const App = () => {
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/edit-profile" element={<EditProfile/>}/>
       <Route path="/checkout" element={<Checkout/>}/>
+      <Route path="/products/search/:query" element={<SearchQuery/>}/>
       <Route path="/products/category/:id" element={<ShowCategory/>} />
       <Route path="/product/:id" element={<ProductDetails/>}/>
       <Route path="/cart" element={<CartPage/>}/>
+      <Route path="/addProduct" element={<AddProduct/>}/>
+      <Route path="/myOrders" element={<MyOrders/>}/>
       <Route path="*" element={<PageNotFound/>}/>
     </Routes>
   ) 

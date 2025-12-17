@@ -11,6 +11,7 @@ const HeroSection = ({categories}) => {
         <LeftSide categories={categories} />
       </div>
       <div className="w-[85%] flex items-center justify-center">
+        
         <img src={Banner} alt="" className='w-full p-10 cursor-pointer' onClick={()=>navigate("/products/category/laptops")}/>
       </div>
         
